@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"scanner" // Import the scanner package
+	"portscanner" // Import the scanner package
 )
 
 func main() {
