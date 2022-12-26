@@ -2,32 +2,39 @@ package main
 
 import (
 	"fmt"
-	"net"
-	"time"
+
+	"portscanner" // Import the scanner package
 )
 
 func main() {
-	// Specify the host and port to scan
+	// Read the host and port from user input
 	var host string
 	fmt.Print("Enter the domain: ")
-	fmt.Scanln(&host)
+	_, err := fmt.Scanln(&host)
+	if err != nil {
+		fmt.Println("Error reading host:", err)
+		return
+	}
 
 	var port int
 	fmt.Print("Enter Port number: ")
-	fmt.Scanln(&port)
-
-	// Create a target address by combining the host and port
-	target := fmt.Sprintf("%s:%d", host, port)
-
-	// Create a TCP connection to the target address
-	conn, err := net.DialTimeout("tcp", target, time.Second*5)
+	_, err = fmt.Scanln(&port)
 	if err != nil {
-		// An error occurred, which means the port is probably closed
-		fmt.Printf("Port %d is closed\n", port)
-	} else {
-		// No error occurred, which means the port is probably open
+		fmt.Println("Error reading port:", err)
+		return
+	}
+
+	// Call the ScanPort function from the scanner package to scan the specified port
+	status, err := scanner.ScanPort(host, port)
+	if err != nil {
+		fmt.Println("Error scanning port:", err)
+		return
+	}
+
+	// Print the result of the port scan
+	if status {
 		fmt.Printf("Port %d is open\n", port)
-		// Don't forget to close the connection when you're done
-		conn.Close()
+	} else {
+		fmt.Printf("Port %d is closed\n", port)
 	}
 }
