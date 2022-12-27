@@ -42,3 +42,7 @@ production:
 development:
 	# Invoke the build target to compile the binary with the default development flags
 	$(MAKE) build
+
+test:
+	# Run the Go tests
+	go test
