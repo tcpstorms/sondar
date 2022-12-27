@@ -1,6 +1,9 @@
 # Set the name of the compiled binary
 BINARY_NAME=nrat
 
+# Set the installation prefix (e.g., /usr/local)
+PREFIX=/usr/local
+
 # Set the output directory for the compiled binary
 OUTPUT_DIR=./bin
 
@@ -46,3 +49,23 @@ development:
 test:
 	# Run the Go tests
 	go test
+
+clean:
+	# Remove the compiled binary and any intermediate build files
+	rm -f $(OUTPUT_DIR)/$(BINARY_NAME)
+
+format:
+	# Format the Go code using gofmt
+	gofmt -s -w .
+
+lint:
+	# Run golint to check for common coding mistakes and style issues
+	golint -set_exit_status
+
+run:
+	# Execute the compiled binary
+	$(OUTPUT_DIR)/$(BINARY_NAME)
+
+install:
+	# Install the compiled binary to /usr/local/bin
+	cp $(OUTPUT_DIR)/$(BINARY_NAME) $(PREFIX)/bin
