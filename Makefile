@@ -1,5 +1,5 @@
 # Set the name of the compiled binary
-BINARY_NAME=nrat
+BINARY_NAME=sondar
 
 # Set the installation prefix (e.g., /usr/local)
 PREFIX=/usr/local
