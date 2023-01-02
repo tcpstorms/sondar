@@ -1,6 +1,6 @@
 # Sondar
 
-Sondar is currently under development and needs awesome people like you to contribute to the project!
+Sondar is currently under development and needs awesome people like **you** to contribute to the project!
 
 Sondar aspires to be a full-fledged network scanner written in Go which may be similar to [Nmap](https://github.com/nmap/nmap) with the use Goroutines and more, making it more efficient and performant.
 
