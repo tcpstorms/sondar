@@ -1,7 +1,3 @@
 # Sondar
 
-Sondar is currently under development and needs awesome people like **YOU** to contribute to the project!
-
-Sondar aspires to be a full-fledged network scanner (written in Go); similar to [Nmap](https://github.com/nmap/nmap). And with Go's speed, simplicity and reliability along with it's well designed concurrency; it may turn out to be more efficient and better performant than most other network scanners; which is basically the goal.
-
-As of now, you can use it to do simple port scans on specified hosts.
+Welcome to Sondar, a full-fledged network scanner written in Go! We are currently in the development phase and are looking for talented contributors like you to help bring Sondar to its full potential. With Go's emphasis on speed, simplicity, and reliability, as well as its well-designed concurrency features, Sondar has the potential to be more efficient and performant than other network scanners on the market. Currently, you can use Sondar to perform simple port scans on specified hosts.
